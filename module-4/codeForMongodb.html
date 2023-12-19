@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo db</title>
+</head>
+
+<body>
+    // db.test.find({gender:'Female',age:{$gte:18, $lte:30}},{age:1 , gender:1}).sort({ age:1 })
+    // db.test.find({gender:'Female',age:{$in:[18 , 20 ,24]}},{age:1 , gender:1}).sort({ age:1 })
+    // db.test.find({gender:'Female',age:{$nin:[18 , 20 ,24]}},{age:1 , gender:1}).sort({ age:1 })
+
+    // db.test.find(
+    // {gender:'Female',
+    // age:{$nin:[18 , 20 ,24]},
+    // interests:{$in:["Cooking" , "Gameing"]},
+    // },
+    // {age:1 , gender:1, interests:1})
+    // .sort({ age:1 })
+
+    // db.test.find({age:{$ne:15 , $lte:30}},{age:1, name:1}).sort({ age:1 })
+    // db.test.find({ $and:[
+    // {gender:'Female'},
+    // {age:{$ne:15}},
+    // {age:{$lte:30}}
+    // ]}).sort({age:1}).project({age:1 , gender:1})
+
+    // db.test.find({ $or:[
+    // {interests:'Traveling'},
+    // {interests:'Cooking'},
+    // {"skills.name":'javascript'}
+    // ]}).sort({id:1}).project({"skills.name":1 , gender:1 })
+
+    // db.test.find({
+    // $or:[
+    // {"skills.name":'JAVASCRIPT'},
+    // {"skills.name":'PYTHON'}
+    // ]
+    // }).sort({id:1}).project({skills:1})
+
+    // db.test.find({data:{$exists: false}}).project({age:1})
+    // db.test.find({age:{$type: 'string'}}).project({age:1})
+    // db.test.find({friends:{$size:4}}).project({friends:1})
+    // db.test.find({interests:{$all : [ "Gaming", "Cooking", "Travelling" ]}}).project({interests:1})
+    // db.test.find({interests: [ "Gaming", "Cooking", "Travelling" ]}).project({interests:1})
+    // db.test.find({"interests.2":"Cooking"}).project({interests:1})
+    // db.test.find({
+    // skills:{
+    // name:'JAVASCRIPT',
+    // level:'Expert',
+    // isLearning:true
+    // }
+    // }).project({skills:1})
+
+    // db.test.find({
+    // skills:{ $elemMatch: {
+    // name:'JAVASCRIPT',
+    // level:'Expert',
+    // }
+    // }
+    // }).project({skills:1})
+
+    // db.test.find({ _id : ObjectId("6406ad63fc13ae5a40000065")}).project({age:1, interests:1})
+    // db.test.find({ _id : ObjectId("6406ad63fc13ae5a40000065")})
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $set:{
+    // age:101
+    // }
+    // }
+    // )
+
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $addToSet:{
+    // interests: 'hello this is zubair'
+    // }
+    // }
+    // )
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $addToSet:{
+    // interests: {$each: ['sadadb', 'rani']}
+    // }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $push:{
+    // interests: {$each: ['sadadb', 'rani']}
+    // }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $pullAll:{
+    // interests: ['sadadb', 'rani']
+    // }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $unset: {birthday: "" }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $pop: {friends: 1 }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $pop: {friends: -1 }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $pull: {friends: 'zubair' }
+    // }
+    // )
+
+    // db.test.updateOne(
+    // {_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // {
+    // $inc:{
+    // age:4
+    // }
+    // }
+    // )
+
+    // db.test.deleteOne({_id : ObjectId("6406ad63fc13ae5a40000065")},
+    // db.post.drop({writeConcern:{w:1}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
